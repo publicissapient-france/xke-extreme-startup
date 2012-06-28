@@ -1,0 +1,11 @@
+.DS_Store
+.gitignore
+.cache
+.classpath
+.project
+.settings
+.target
+bin
+logs
+target
+tmp
