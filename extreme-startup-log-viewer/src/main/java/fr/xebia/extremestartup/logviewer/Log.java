@@ -11,9 +11,18 @@ public class Log {
     private final String expected;
     private final String answer;
     private final Status status;
+    private final int score;
 
-    public Log(Date date, Player player, String questionId, String question, String expected, String answer,
-               Status status) {
+    Log(Player player, String questionId, String question, String expected, String answer, Status status, int score) {
+        this(null, player, questionId, question, expected, answer, status, score);
+    }
+
+    Log(Date date, Player player, String questionId, String question, String expected, String answer, Status status) {
+        this(date, player, questionId, question, expected, answer, status, 0);
+    }
+
+    private Log(Date date, Player player, String questionId, String question, String expected, String answer,
+                Status status, int score) {
         this.date = date;
         this.player = player;
         this.questionId = questionId;
@@ -21,6 +30,7 @@ public class Log {
         this.answer = answer;
         this.expected = expected;
         this.status = status;
+        this.score = score;
     }
 
     Date getDate() {
@@ -51,8 +61,12 @@ public class Log {
         return player;
     }
 
+    public int getScore() {
+        return score;
+    }
+
     enum Status {
-        NO_ANSWER, CORRECT, WRONG;
+        NO_ANSWER, CORRECT, WRONG
     }
 
 }

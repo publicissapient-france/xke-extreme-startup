@@ -56,4 +56,9 @@ public class LogAssertion implements AssertExtension {
         return this;
     }
 
+    public LogAssertion scoreIsEqualTo(int expectedScore) {
+        assertThat(actualLog.getScore()).isEqualTo(expectedScore);
+        return this;
+    }
+
 }

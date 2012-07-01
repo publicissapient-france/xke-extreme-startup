@@ -24,4 +24,10 @@ public class PlayerAssertion {
         assertThat(actualPlayer.getPlayerURL().toString()).isEqualTo(expectedURL);
         return this;
     }
+
+    public PlayerAssertion scoreIsEqualTo(int expectedScore) {
+        assertThat(actualPlayer.getScore()).isEqualTo(expectedScore);
+        return this;
+    }
+
 }

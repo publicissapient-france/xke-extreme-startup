@@ -9,7 +9,12 @@ import java.util.regex.Pattern;
 public class LogViewer {
 
     private static final Pattern LOG_LINE_PATTERN = Pattern
-            .compile("I, \\[([\\d\\-T:\\.]+).+Player: ([a-z]+) \\(([\\da-f]{8}): (http://[\\d\\.:]+)\\)\\|\\|question: ([\\da-f]{8}): ([\\w\\s:,.]+)\\|answer: ([\\w\\s]*)\\|expected: ([\\w\\s]*)\\|result: (.*)");
+            .compile("I, \\[([\\d\\-T:\\.]+).+" +
+                    "Player: ([a-z]+) \\(([\\da-f]{8}): (http://[\\d\\.:]+)\\)\\|" +
+                    "\\|question: ([\\da-f]{8}): ([\\w\\s:,.]+)" +
+                    "\\|answer: ([\\w\\s]*)" +
+                    "\\|expected: ([\\w\\s]*)" +
+                    "\\|result: (.*)");
 
     static Log readLine(String line) throws MalformedURLException {
         final Matcher matcher = LOG_LINE_PATTERN.matcher(line);
