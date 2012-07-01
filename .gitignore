@@ -1,5 +1,4 @@
 .DS_Store
-.gitignore
 .cache
 .classpath
 .project
@@ -9,3 +8,5 @@ bin
 logs
 target
 tmp
+*.iml
+.idea/
