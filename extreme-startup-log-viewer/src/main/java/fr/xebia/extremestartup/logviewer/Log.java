@@ -17,10 +17,6 @@ public class Log {
         this(null, player, questionId, question, expected, answer, status, score);
     }
 
-    Log(Date date, Player player, String questionId, String question, String expected, String answer, Status status) {
-        this(date, player, questionId, question, expected, answer, status, 0);
-    }
-
     private Log(Date date, Player player, String questionId, String question, String expected, String answer,
                 Status status, int score) {
         this.date = date;

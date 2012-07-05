@@ -15,12 +15,6 @@ public class LogAssertion implements AssertExtension {
         actualLog = actual;
     }
 
-    public LogAssertion dateIsEqualTo(String expectedFormatedDate) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
-        assertThat(simpleDateFormat.format(actualLog.getDate())).isEqualTo(expectedFormatedDate);
-        return this;
-    }
-
     public LogAssertion questionIdIsEqualTo(String expectedQuestionId) {
         assertThat(actualLog.getQuestionId()).isEqualTo(expectedQuestionId);
         return this;
