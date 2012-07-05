@@ -1,10 +1,8 @@
-package fr.xebia.extremestartup.logviewer;
+package fr.xebia.extremestartup.logreader;
 
 import org.fest.assertions.AssertExtension;
 
-import java.text.SimpleDateFormat;
-
-import static fr.xebia.extremestartup.logviewer.Log.Status.*;
+import static fr.xebia.extremestartup.logreader.Log.Status.*;
 import static org.fest.assertions.Assertions.assertThat;
 
 public class LogAssertion implements AssertExtension {
@@ -30,13 +28,8 @@ public class LogAssertion implements AssertExtension {
         return this;
     }
 
-    public LogAssertion expectedIsEqualTo(String expectedExpected) {
-        assertThat(actualLog.getExpected()).isEqualTo(expectedExpected);
-        return this;
-    }
-
-    public LogAssertion noAnswer() {
-        assertThat(actualLog.getStatus()).isEqualTo(NO_ANSWER);
+    public LogAssertion noServerResponse() {
+        assertThat(actualLog.getStatus()).isEqualTo(NO_SERVER_RESPONSE);
         return this;
     }
 
@@ -47,6 +40,11 @@ public class LogAssertion implements AssertExtension {
 
     public LogAssertion isCorrect() {
         assertThat(actualLog.getStatus()).isEqualTo(CORRECT);
+        return this;
+    }
+
+    public LogAssertion isErrorResponse() {
+        assertThat(actualLog.getStatus()).isEqualTo(ERROR_RESPONSE);
         return this;
     }
 

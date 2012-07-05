@@ -1,4 +1,4 @@
-package fr.xebia.extremestartup.logviewer;
+package fr.xebia.extremestartup.logreader;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -15,13 +15,8 @@ public class PlayerAssertion {
         return this;
     }
 
-    public PlayerAssertion playerIdIsEqualTo(String expectedPlayerId) {
-        assertThat(actualPlayer.getPlayerId()).isEqualTo(expectedPlayerId);
-        return this;
-    }
-
     public PlayerAssertion playerURLIsEqualTo(String expectedURL) {
-        assertThat(actualPlayer.getPlayerURL().toString()).isEqualTo(expectedURL);
+        assertThat(actualPlayer.getPlayerURL()).isEqualTo(expectedURL);
         return this;
     }
 

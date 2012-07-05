@@ -1,4 +1,4 @@
-package fr.xebia.extremestartup.logviewer;
+package fr.xebia.extremestartup.logreader;
 
 public class Assertions {
 

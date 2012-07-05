@@ -1,0 +1,13 @@
+== Sinatra/1.2.6 has taken the stage on 3000 for development with backup from Thin
+>> Thin web server (v1.2.11 codename Bat-Shit Crazy)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:3000, CTRL+C to stop
+GET: http://127.0.0.1:8080?q=44f2e7a0:%20what%20is%2018%20plus%2011
+For player Sébastian (http://127.0.0.1:8080/)
+	question: 1f9baef0: what is 16 plus 5
+	answer: 21
+	result: correct
+added 10 to player sebastian's score. It is now 10
+>> Stopping ...
+
+== Sinatra has ended his set (crowd applauds)
