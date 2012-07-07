@@ -31,7 +31,6 @@ public class LogReader {
     }
 
     static void readLogs(InputStream in, LogCallback logCallback) {
-        BufferedReader out = new BufferedReader(new InputStreamReader(in));
         String currentLine;
         String[] logLines = new String[4];
         StringBuilder answer = new StringBuilder();
@@ -40,7 +39,7 @@ public class LogReader {
         int lineCount = 0;
         boolean gettingAnswer = false;
 
-        try {
+        try (BufferedReader out = new BufferedReader(new InputStreamReader(in))) {
             while ((currentLine = out.readLine()) != null) {
                 lineCount++;
                 if (currentLine.startsWith("For player ")
