@@ -2,7 +2,7 @@ package fr.xebia.extremestartup.logreader;
 
 import static org.fest.assertions.Assertions.assertThat;
 
-public class PlayerAssertion {
+class PlayerAssertion {
 
     private final Player actualPlayer;
 
@@ -15,12 +15,12 @@ public class PlayerAssertion {
         return this;
     }
 
-    public PlayerAssertion playerURLIsEqualTo(String expectedURL) {
+    PlayerAssertion playerURLIsEqualTo(String expectedURL) {
         assertThat(actualPlayer.getPlayerURL()).isEqualTo(expectedURL);
         return this;
     }
 
-    public PlayerAssertion scoreIsEqualTo(int expectedScore) {
+    PlayerAssertion scoreIsEqualTo(int expectedScore) {
         assertThat(actualPlayer.getScore()).isEqualTo(expectedScore);
         return this;
     }

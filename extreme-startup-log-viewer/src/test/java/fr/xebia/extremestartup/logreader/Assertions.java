@@ -1,6 +1,6 @@
 package fr.xebia.extremestartup.logreader;
 
-public class Assertions {
+class Assertions {
 
     static LogAssertion assertThat(Log actualLog) {
         return new LogAssertion(actualLog);

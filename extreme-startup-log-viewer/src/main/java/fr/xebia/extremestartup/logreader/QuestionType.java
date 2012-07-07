@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 import static java.util.regex.Pattern.compile;
 
-public enum QuestionType {
+enum QuestionType {
 
     NAME(compile("what is your name")),
     ADDITION(compile("what is \\d+ plus \\d+")),
