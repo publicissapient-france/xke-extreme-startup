@@ -42,6 +42,10 @@ class Log {
         return score;
     }
 
+    public QuestionType getQuestionType() {
+        return QuestionType.getTypeFromQuestion(question);
+    }
+
     enum Status {
         CORRECT,
         ERROR_RESPONSE,

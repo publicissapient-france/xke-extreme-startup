@@ -53,4 +53,8 @@ public class LogAssertion implements AssertExtension {
         return this;
     }
 
+    public LogAssertion questionIsOfType(QuestionType expectedQuestionType) {
+        assertThat(actualLog.getQuestionType()).isEqualTo(expectedQuestionType);
+        return this;
+    }
 }

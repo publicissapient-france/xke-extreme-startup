@@ -2,10 +2,12 @@ package fr.xebia.extremestartup.logreader;
 
 import org.junit.Test;
 
+import java.util.Iterator;
 import java.util.List;
 
 import static fr.xebia.extremestartup.logreader.Assertions.assertThat;
 import static fr.xebia.extremestartup.logreader.LogReader.readLogs;
+import static fr.xebia.extremestartup.logreader.QuestionType.*;
 import static org.fest.assertions.Assertions.assertThat;
 
 public class LogReaderTest {
@@ -251,6 +253,28 @@ public class LogReaderTest {
         List<Log> logs = readLogs(LogReaderTest.class.getResourceAsStream("log-xke.txt"));
 
         assertThat(logs).hasSize(11772);
+    }
+
+    @Test
+    public void should_get_all_question_types() {
+        Iterator<Log> logs = readLogs(LogReaderTest.class.getResourceAsStream("log-with-all-questions.txt")).iterator();
+
+        Assertions.assertThat(logs.next()).questionIsOfType(NAME);
+        Assertions.assertThat(logs.next()).questionIsOfType(ADDITION);
+        Assertions.assertThat(logs.next()).questionIsOfType(MAXIMUM);
+        Assertions.assertThat(logs.next()).questionIsOfType(MULTIPLICATION);
+        Assertions.assertThat(logs.next()).questionIsOfType(SQUARE_CUBE);
+        Assertions.assertThat(logs.next()).questionIsOfType(GENERAL_KNOWLEDGE);
+        Assertions.assertThat(logs.next()).questionIsOfType(PRIMES);
+        Assertions.assertThat(logs.next()).questionIsOfType(SUBSTRACTION);
+        Assertions.assertThat(logs.next()).questionIsOfType(FIBONACCI);
+        Assertions.assertThat(logs.next()).questionIsOfType(POWER);
+        Assertions.assertThat(logs.next()).questionIsOfType(ADDITION_ADDITION);
+        Assertions.assertThat(logs.next()).questionIsOfType(ADDITION_MULTIPLICATION);
+        Assertions.assertThat(logs.next()).questionIsOfType(MULTIPLICATION_ADDITION);
+        Assertions.assertThat(logs.next()).questionIsOfType(ANAGRAM);
+        Assertions.assertThat(logs.next()).questionIsOfType(SCRABBLE);
+        Assertions.assertThat(logs.next()).questionIsOfType(UNKNOWN);
     }
 
 }

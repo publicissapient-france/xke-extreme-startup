@@ -1,0 +1,103 @@
+== Sinatra/1.2.6 has taken the stage on 3000 for development with backup from Thin
+>> Thin web server (v1.2.11 codename Bat-Shit Crazy)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:3000, CTRL+C to stop
+GET: http://127.0.0.1:1337?q=9d42d770:%20what%20is%20your%20name
+For player Sébastian (http://127.0.0.1:8080)
+	question: 9d42d770: what is your name
+	answer: johannes
+	result: wrong
+added -10 to player Sébastian's score. It is now -10
+GET: http://127.0.0.1:8080?q=44f2e7a0:%20what%20is%2018%20plus%2011
+For player Sébastian (http://127.0.0.1:8080)
+	question: 1f9baef0: what is 16 plus 5
+	answer: 21
+	result: correct
+added 10 to player sebastian's score. It is now 0
+GET: http://127.0.0.1:8080?q=37368040:%20which%20of%20the%20following%20numbers%20is%20the%20largest:%20567,%2010,%2068,%20929
+For player Sébastian (http://127.0.0.1:8080)
+	question: 37368040: which of the following numbers is the largest: 567, 10, 68, 929
+	answer: 929
+	result: correct
+added 40 to player Sébastian's score. It is now 40
+GET: http://127.0.0.1:8080?q=8bf3bd70:%20what%20is%2014%20multiplied%20by%2017
+For player Sébastian (http://127.0.0.1:8080)
+	question: 8bf3bd70: what is 14 multiplied by 17
+	answer: 238
+	result: correct
+added 10 to player Sébastian's score. It is now 50
+GET: http://127.0.0.1:8080?q=8a589c30:%20which%20of%20the%20following%20numbers%20is%20both%20a%20square%20and%20a%20cube:%20630,%20654,%201444,%201
+For player Sébastian (http://127.0.0.1:8080)
+	question: 8a589c30: which of the following numbers is both a square and a cube: 630, 654, 1444, 1
+	answer: 1
+	result: correct
+added 60 to player Sébastian's score. It is now 110
+GET: http://127.0.0.1:8080?q=21d752b0:%20what%20colour%20is%20a%20banana
+For player Sébastian (http://127.0.0.1:8080)
+	question: 21d752b0: what colour is a banana
+	answer: yellow
+	result: correct
+added 10 to player Sébastian's score. It is now 120
+GET: http://127.0.0.1:8080/?q=44b4d5a0:%20which%20of%20the%20following%20numbers%20are%20primes:%20358,%20239
+For player Sébastian (http://127.0.0.1:8080/)
+	question: 44b4d5a0: which of the following numbers are primes: 358, 239
+	answer: 239
+	result: correct
+added 60 to player Sébastian's score. It is now 180
+GET: http://127.0.0.1:8080?q=ff998540:%20what%20is%2013%20minus%201
+For player Sébastian (http://127.0.0.1:8080)
+	question: ff998540: what is 13 minus 1
+	answer: 12
+	result: correct
+added 10 to player Sébastian's score. It is now 190
+GET: http://127.0.0.1:8080?q=3427c740:%20what%20is%20the%2011th%20number%20in%20the%20Fibonacci%20sequence
+For player Sébastian (http://127.0.0.1:8080)
+	question: 3313b190: what is the 6th number in the Fibonacci sequence
+	answer: 8
+	result: correct
+added 50 to player Sébastian's score. It is now 240
+GET: http://127.0.0.1:8080/?q=753ebb20:%20what%20is%2018%20to%20the%20power%20of%209
+For player Sébastian (http://127.0.0.1:8080)
+	question: 753ebb20: what is 18 to the power of 9
+	answer: 198359290368
+	result: correct
+added 20 to player Sébastian's score. It is now 260
+GET: http://127.0.0.1:8080?q=76e1e610:%20what%20is%2015%20plus%201%20plus%201
+For player Sébastian (http://127.0.0.1:8080)
+	question: 76e1e610: what is 15 plus 1 plus 1
+	answer: 17
+	result: correct
+added 30 to player Sébastian's score. It is now 290
+GET: http://127.0.0.1:8080?q=7c9700b0:%20what%20is%206%20plus%205%20multiplied%20by%205
+For player Sébastian (http://127.0.0.1:8080)
+	question: 7c9700b0: what is 6 plus 5 multiplied by 5
+	answer: 31
+	result: correct
+added 60 to player Sébastian's score. It is now 350
+GET: http://127.0.0.1:8080?q=7c9700b0:%20what%20is%204%20multiplied%20by%2010%20plus%201
+For player Sébastian (http://127.0.0.1:8080)
+	question: 831578c0: what is 4 multiplied by 10 plus 1
+	answer: 41
+	result: correct
+added 50 to player Sébastian's score. It is now 400
+GET: http://127.0.0.1:8080?q=281fa8e0:%20which%20of%20the%20following%20is%20an%20anagram%20of%20%22admirer%22:%20married,%20forgot,%20dairy,%20random,%20border
+For player Sébastian (http://127.0.0.1:8080)
+	question: 281fa8e0: which of the following is an anagram of "admirer": dairy, random, forgot, married, border
+	answer: married
+	result: correct
+added 10 to player Sébastian's score. It is now 410
+GET: http://127.0.0.1:8080?q=29c1b5c0:%20what%20is%20the%20english%20scrabble%20score%20of%20banana
+For player Sébastian (http://127.0.0.1:8080)
+	question: 29c1b5c0: what is the english scrabble score of banana
+	answer: 8
+	result: correct
+added 10 to player Sébastian's score. It is now 420
+GET: http://127.0.0.1:8080?q=29c1b5c0:%20what%20is%20the%20coolest%20compagny%20of%20the%20world
+For player Sébastian (http://127.0.0.1:8080)
+	question: 29c1b5c0: what is the coolest compagny of the world
+	answer: xebia
+	result: correct
+added 10 to player Sébastian's score. It is now 430
+>> Stopping ...
+
+== Sinatra has ended his set (crowd applauds)
