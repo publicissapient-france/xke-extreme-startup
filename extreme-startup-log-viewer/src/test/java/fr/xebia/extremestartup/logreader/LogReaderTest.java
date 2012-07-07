@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.List;
 
+import static fr.xebia.extremestartup.logreader.Assertions.assertThat;
 import static fr.xebia.extremestartup.logreader.LogReader.readLogs;
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -15,11 +16,11 @@ public class LogReaderTest {
 
         assertThat(logs).hasSize(1);
         Log log = logs.iterator().next();
-        Assertions.assertThat(log.getPlayer())
+        assertThat(log.getPlayer())
                 .playerNameIsEqualTo("Sébastian")
                 .playerURLIsEqualTo("http://127.0.0.1:8080")
                 .scoreIsEqualTo(10);
-        Assertions.assertThat(log)
+        assertThat(log)
                 .questionIdIsEqualTo("1f9baef0")
                 .questionIsEqualTo("what is 16 plus 5")
                 .answerIsEqualTo("21")
@@ -31,7 +32,7 @@ public class LogReaderTest {
     public void should_parse_big_request() {
         List<Log> logs = readLogs(LogReaderTest.class.getResourceAsStream("log-with-big-answear.txt"));
 
-        Assertions.assertThat(logs.iterator().next()).answerIsEqualTo("<!doctype html>\n" +
+        assertThat(logs.iterator().next()).answerIsEqualTo("<!doctype html>\n" +
                 "<!--[if lt ie 7 ]> <html lang=\"en\" class=\"no-js ie6\"> <![endif]-->\n" +
                 "<!--[if ie 7 ]>    <html lang=\"en\" class=\"no-js ie7\"> <![endif]-->\n" +
                 "<!--[if ie 8 ]>    <html lang=\"en\" class=\"no-js ie8\"> <![endif]-->\n" +
@@ -219,14 +220,14 @@ public class LogReaderTest {
     public void should_parse_url_with_trailing_slash() {
         List<Log> logs = readLogs(LogReaderTest.class.getResourceAsStream("log-with-trailing-slash-in-uri.txt"));
 
-        Assertions.assertThat(logs.iterator().next().getPlayer()).playerURLIsEqualTo("http://127.0.0.1:8080/");
+        assertThat(logs.iterator().next().getPlayer()).playerURLIsEqualTo("http://127.0.0.1:8080/");
     }
 
     @Test
     public void should_parse_url_without_protocol() {
         List<Log> logs = readLogs(LogReaderTest.class.getResourceAsStream("log-without-protocol-in-uri.txt"));
 
-        Assertions.assertThat(logs.iterator().next().getPlayer()).playerURLIsEqualTo("127.0.0.1:8080");
+        assertThat(logs.iterator().next().getPlayer()).playerURLIsEqualTo("127.0.0.1:8080");
     }
 
     @Test
@@ -234,15 +235,15 @@ public class LogReaderTest {
         List<Log> logs = readLogs(LogReaderTest.class.getResourceAsStream("log-with-negative-score.txt"));
         Log log = logs.iterator().next();
 
-        Assertions.assertThat(log.getPlayer()).scoreIsEqualTo(-10);
-        Assertions.assertThat(log).isWrong().scoreIsEqualTo(-10);
+        assertThat(log.getPlayer()).scoreIsEqualTo(-10);
+        assertThat(log).isWrong().scoreIsEqualTo(-10);
     }
 
     @Test
     public void should_parse_player_without_name() {
         Log log = readLogs(LogReaderTest.class.getResourceAsStream("log-without-player-name.txt")).iterator().next();
 
-        Assertions.assertThat(log.getPlayer()).playerNameIsEqualTo("");
+        assertThat(log.getPlayer()).playerNameIsEqualTo("");
     }
 
     @Test
