@@ -21,11 +21,21 @@ public class LogReader {
     };
 
     static List<Log> readLogs(InputStream in) {
-        List<Log> logs = new LinkedList<>();
+        final List<Log> logs = new LinkedList<>();
+        readLogs(in, new LogCallback() {
+            public void newLog(int logNumber, Log newLog) {
+                logs.add(newLog);
+            }
+        });
+        return logs;
+    }
+
+    static void readLogs(InputStream in, LogCallback logCallback) {
         BufferedReader out = new BufferedReader(new InputStreamReader(in));
         String currentLine;
         String[] logLines = new String[4];
         StringBuilder answer = new StringBuilder();
+        int logNumber = 0;
         int currentLineCount = 0;
         int lineCount = 0;
         boolean gettingAnswer = false;
@@ -38,7 +48,7 @@ public class LogReader {
                         || currentLine.startsWith(">>")) {
                     if (logLines[0] != null) {
                         try {
-                            logs.add(readLog(answer, logLines));
+                            logCallback.newLog(logNumber++, readLog(answer, logLines));
                         } catch (Exception e) {
                             System.err.println("line " + lineCount + " : " + e.getMessage());
                         }
@@ -73,8 +83,6 @@ public class LogReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return logs;
     }
 
     private static Log readLog(StringBuilder answer, String... logLines) {
