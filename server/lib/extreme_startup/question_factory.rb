@@ -158,6 +158,23 @@ module ExtremeStartup
     end
   end
 
+  class HexadecimalQuestion < BinaryMathsQuestion
+    def initialize(player, *numbers)
+      if numbers.any?
+        @n1, @n2 = *numbers
+      else
+        @n1, @n2 = rand(2000), rand(2000)
+      end
+    end
+    def as_text
+      "what is the decimal value of 0x#{@n1.to_s(16)} plus 0x#{@n2.to_s(16)} ?"
+    end
+  private
+    def correct_answer
+      @n1 + @n2
+    end
+  end
+
   class SubtractionQuestion < BinaryMathsQuestion
     def as_text
       "what is #{@n1} minus #{@n2}"
