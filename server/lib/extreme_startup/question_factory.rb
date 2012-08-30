@@ -324,11 +324,11 @@ module ExtremeStartup
     class << self
       def question_bank
         [
-          ["who is the Prime Minister of Great Britain", "David Cameron"],
-          ["which city is the Eiffel tower in", "Paris"],
-          ["what currency did Spain use before the Euro", "peseta"],
-          ["what colour is a banana", "yellow"],
-          ["who played James Bond in the film Dr No", "Sean Connery"]
+          ["who counted to infinity twice", "Chuck Norris"],
+          ["what is the answer to life, the universe and everything", "42"],
+          ["who said 'Luke, I am your father'", "Darth Vader"],
+          ["what does 'RTFM' stand for", "Read The Fucking Manual"],
+          ["in which language was the first 'hello, world' written", "C"],
         ]
       end
     end
