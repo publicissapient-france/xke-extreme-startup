@@ -1,5 +1,6 @@
 require 'set'
 require 'prime'
+require 'date'
 
 module ExtremeStartup
   class Question
@@ -383,6 +384,25 @@ module ExtremeStartup
       %w{j x}.each                  {|l| scores[l] = 8 }
       %w{q z}.each                  {|l| scores[l] = 10 }
       scores
+    end
+  end
+
+  class WeekdayQuestion < Question
+    def as_text
+      "which day of the week is #{@date}"
+    end
+
+    def initialize(player, date=nil)
+      if date
+        @date = date
+      else
+        random_date = Date.new(2000,1,1) + rand(4000)
+        @date = random_date.strftime('%e %b %Y')
+      end
+    end
+
+    def correct_answer
+      Date.parse(@date).strftime('%A')
     end
   end
 
