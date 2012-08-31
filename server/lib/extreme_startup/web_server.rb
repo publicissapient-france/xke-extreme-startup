@@ -26,8 +26,8 @@ module ExtremeStartup
 
     get '/' do 
       haml :leaderboard, :locals => { 
-          :players => players  }
           :leaderboard => LeaderBoard.new(scoreboard, players, game_state, request.ip),
+          :players => players  }
     end
 
     get '/scores' do 
