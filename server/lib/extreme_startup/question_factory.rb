@@ -320,6 +320,29 @@ module ExtremeStartup
     end
   end
 
+  class PiQuestion < BinaryMathsQuestion
+    def as_text
+      n = @n1 + 1
+      "what is the #{n}" + th(n) + " decimal of Pi"
+    end
+  private
+    def correct_answer
+      "1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"[@n1]
+    end
+    def th(n)
+      if n % 10 == 1
+        return "st"
+      end
+      if n % 10 == 2
+        return "nd"
+      end
+      if n % 10 == 3
+        return "rd"
+      end
+      "th"
+    end
+  end
+
   class GeneralKnowledgeQuestion < Question
     class << self
       def question_bank
