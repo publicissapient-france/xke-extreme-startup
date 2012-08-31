@@ -11,7 +11,7 @@ module ExtremeStartup
     end
 
     context "when the numbers are known" do
-        let(:question) { HexadecimalQuestion.new(Player.new, 0xa1,0x1) }
+      let(:question) { HexadecimalQuestion.new(Player.new, 0xa1,0x1) }
 
       it "converts to the right string" do
         question.as_text.should =~ /what is the decimal value of 0xa1 plus 0x1/i
