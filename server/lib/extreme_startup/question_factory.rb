@@ -429,20 +429,19 @@ module ExtremeStartup
 
   class WeekdayQuestion < Question
     def as_text
-      "which day of the week is #{@date}"
+      "which day of the week is #{@date.strftime('%e %b %Y')}"
     end
 
     def initialize(player, date=nil)
       if date
         @date = date
       else
-        random_date = Date.new(2000,1,1) + rand(4000)
-        @date = random_date.strftime('%e %b %Y')
+        @date = Date.new(2000,1,1) + rand(4000)
       end
     end
 
     def correct_answer
-      Date.parse(@date).strftime('%A')
+      @date.strftime('%A')
     end
   end
 

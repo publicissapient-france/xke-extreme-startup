@@ -7,14 +7,14 @@ module ExtremeStartup
     let(:question) { WeekdayQuestion.new(Player.new) }
 
     it "converts to a string" do
-      question.as_text.should =~ /which day of the week is \d{1,2} \w{3} \d{4}/i
+      question.as_text.should =~ /which day of the week is [\s123]\d \w{3} \d{4}/i
     end
 
     context "when the date is known" do
-      let(:question) { WeekdayQuestion.new(Player.new, "7 Dec 2013") }
+      let(:question) { WeekdayQuestion.new(Player.new, Date.new(2013, 12, 7)) }
 
       it "converts to the right string" do
-        question.as_text.should =~ /which day of the week is 7 Dec 2013/i
+        question.as_text.should =~ /which day of the week is  7 Dec 2013/i
       end
 
       it "identifies a correct answer" do
