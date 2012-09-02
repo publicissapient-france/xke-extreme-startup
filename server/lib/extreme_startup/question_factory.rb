@@ -280,6 +280,27 @@ module ExtremeStartup
     end
   end
 
+  class IntegerListQuestion < Question
+    FIXNUMMAX=(2**(0.size * 8 -2) -1)
+    def initialize(player, *numbers)
+      if numbers.any?
+        @array = numbers
+      else
+        @array = (1..10).map {|x| rand(FIXNUMMAX)}
+      end
+      @correct= @array.reduce(:*)
+    end
+    def as_text
+      "what is the product of [#{@array.join(', ')}]"
+    end
+    def points
+      30
+    end
+    private
+      def correct_answer
+        @correct
+      end
+  end
   class PrimesQuestion < SelectFromListOfNumbersQuestion
      def as_text
        "which of the following numbers are primes: " + @numbers.join(', ')
