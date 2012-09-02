@@ -366,6 +366,20 @@ module ExtremeStartup
     end
   end
 
+  class FeetToMetersQuestion < BinaryMathsQuestion
+    def as_text
+	n = @n1 + 1
+	"how much is #{n} feet in meters"
+    end
+    def answered_correctly?(answer)
+      answer.start_with? correct_answer
+    end
+  private
+   def correct_answer
+     '%.2f' % ((@n1 + 1) * 0.3048)
+   end
+  end
+ 
   class GeneralKnowledgeQuestion < Question
     class << self
       def question_bank
