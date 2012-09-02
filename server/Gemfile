@@ -11,4 +11,4 @@ gem 'cucumber'
 gem 'rack-test'
 gem 'capybara'
 gem 'json'
-
+gem 'random-word'

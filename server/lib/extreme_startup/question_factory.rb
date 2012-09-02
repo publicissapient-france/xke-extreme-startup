@@ -1,6 +1,8 @@
 require 'set'
 require 'prime'
 require 'date'
+require 'random_word'
+require 'digest/sha1'
 
 module ExtremeStartup
   class Question
@@ -445,6 +447,23 @@ module ExtremeStartup
       %w{j x}.each                  {|l| scores[l] = 8 }
       %w{q z}.each                  {|l| scores[l] = 10 }
       scores
+    end
+  end
+
+  class RandomWordSHA1Question < Question
+    def initialize(player, word=nil)
+      if(word)
+        @word=word
+      else
+        @word=RandomWord.nouns.next
+      end
+    end
+    def as_text
+      "what is the sha1 for \"#{@word}\""
+    end
+    private
+    def correct_answer
+      Digest::SHA1.hexdigest @word
     end
   end
 
