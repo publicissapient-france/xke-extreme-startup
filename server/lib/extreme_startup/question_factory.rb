@@ -389,6 +389,7 @@ module ExtremeStartup
           ["who said 'Luke, I am your father'", "Darth Vader"],
           ["what does 'RTFM' stand for", "Read The Fucking Manual"],
           ["in which language was the first 'hello, world' written", "C"],
+          ["which HTTP code do you get when you send a request to a teapot", "418"],
         ]
       end
     end
