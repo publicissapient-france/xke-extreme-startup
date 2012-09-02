@@ -368,8 +368,8 @@ module ExtremeStartup
 
   class FeetToMetersQuestion < BinaryMathsQuestion
     def as_text
-	n = @n1 + 1
-	"how much is #{n} feet in meters"
+	    n = @n1 + 1
+	    "how much is #{n} feet in meters"
     end
     def answered_correctly?(answer)
       answer.start_with? correct_answer
