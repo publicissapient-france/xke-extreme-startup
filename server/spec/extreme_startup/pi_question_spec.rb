@@ -11,7 +11,7 @@ module ExtremeStartup
     end
 
     context "when the numbers are known" do
-      let(:question) { PiQuestion.new(Player.new, 11, 8) }
+      let(:question) { PiQuestion.new(Player.new, 11) }
 
       it "converts to the right string" do
         question.as_text.should == "what is the 12nd decimal of Pi"

@@ -87,6 +87,12 @@ module ExtremeStartup
       10
     end
   end
+  
+  class UnaryMathsQuestion < Question
+    def initialize(player, number =rand(20))
+        @n1 = number
+    end
+  end
 
   class BinaryMathsQuestion < Question
     def initialize(player, *numbers)
@@ -97,6 +103,7 @@ module ExtremeStartup
       end
     end
   end
+
 
   class TernaryMathsQuestion < Question
     def initialize(player, *numbers)
@@ -343,7 +350,7 @@ module ExtremeStartup
     end
   end
 
-  class PiQuestion < BinaryMathsQuestion
+  class PiQuestion < UnaryMathsQuestion
     def as_text
       n = @n1 + 1
       "what is the #{n}" + th(n) + " decimal of Pi"
@@ -366,17 +373,18 @@ module ExtremeStartup
     end
   end
 
-  class FeetToMetersQuestion < BinaryMathsQuestion
+  class FeetToMetersQuestion < UnaryMathsQuestion
+    RATIO=0.3048
     def as_text
-	    n = @n1 + 1
-	    "how much is #{n} feet in meters"
+        n = @n1 + 1
+        "how much is #{n} feet in meters"
     end
     def answered_correctly?(answer)
-      answer.start_with? correct_answer
+       (answer.to_f - correct_answer.to_f).abs < 0.01 
     end
   private
    def correct_answer
-     '%.2f' % ((@n1 + 1) * 0.3048)
+     '%.2f' % ((@n1 + 1) * RATIO)
    end
   end
  
