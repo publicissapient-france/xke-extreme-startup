@@ -118,7 +118,14 @@ module ExtremeStartup
     post '/resume' do
       game_state.resume
     end
-    
+
+    get '/http_code' do
+      question_uuid=params[:uid]
+      code = ExtremeStartup::HttpResponseQuestion::REGISTERED_RESPONSES[question_uuid]
+      puts "uuid #{question_uuid}, code #{code}"
+      halt(code.to_i)
+    end
+
     get %r{/withdraw/([\w]+)} do |uuid|
       if players[uuid].can_withdraw(request.ip)
         scoreboard.delete_player(players[uuid])
