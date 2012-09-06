@@ -525,30 +525,20 @@ module ExtremeStartup
   end
 
   class HttpResponseQuestion < Question
-    RESPONSE_CODES=[200,201,202,203,204,205,206,400,401,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,
-                    500,501,502,503,504,505]
-    REGISTERED_RESPONSES=Hash.new
-    def initialize(player, uuid=nil,responsecode=nil)
-      baseurl=ENV['BASEURL'] || "http://localhost:3000/"
-      @url=baseurl+"http_code?uid="
-      @id=uuid
-      if(responsecode)
-        @code=responsecode
-      else
-        @code=RESPONSE_CODES.sample
-      end
+    def initialize(player, mock_urls)
+      @status, @url = mock_urls.sample_status_and_url
     end
+
     def as_text
-      REGISTERED_RESPONSES[self.id]=@code
-      "what is the http response code of #{@url+id.to_s}"
+      "what HTTP response status do you get when you send a GET request to #{@url}"
     end
+
     def points
       60
     end
     private
     def correct_answer
-      REGISTERED_RESPONSES.delete(self.id)
-      @code
+      @status
     end
   end
 
@@ -575,7 +565,12 @@ module ExtremeStartup
       window_end = (@round * 2 - 1)
       window_start = [0, window_end - 4].max
       available_question_types = @question_types[window_start..window_end]
-      available_question_types.sample.new(player)
+      next_question_type = available_question_types.sample
+      if next_question_type == HttpResponseQuestion
+        next_question_type.new(player, mock_urls)
+      else
+        next_question_type.new(player)
+      end
     end
 
     def advance_round

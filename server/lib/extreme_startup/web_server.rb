@@ -8,6 +8,7 @@ require_relative 'game_state'
 require_relative 'scoreboard'
 require_relative 'player'
 require_relative 'quiz_master'
+require_relative 'mock_urls'
 
 Thread.abort_on_exception = true
 
@@ -15,12 +16,17 @@ module ExtremeStartup
     
   class WebServer < Sinatra::Base
 
+    def WebServer.local_ip
+      UDPSocket.open {|s| s.connect("64.233.187.99", 1); s.addr.last}
+    end
+
     set :port, 3000
     set :static, true 
     set :public, 'public'
     set :players,    Hash.new
     set :players_threads, Hash.new
     set :scoreboard, Scoreboard.new
+    set :mock_urls, MockUrls.new("http://#{local_ip}:#{settings.port}/http_code")
     set :question_factory, ENV['WARMUP'] ? WarmupQuestionFactory.new : QuestionFactory.new
     set :game_state, GameState.new
 
@@ -119,11 +125,9 @@ module ExtremeStartup
       game_state.resume
     end
 
-    get '/http_code' do
-      question_uuid=params[:uid]
-      code = ExtremeStartup::HttpResponseQuestion::REGISTERED_RESPONSES[question_uuid]
-      puts "uuid #{question_uuid}, code #{code}"
-      halt(code.to_i)
+    get '/http_code/:token' do
+      status = settings.mock_urls.status(params[:token]) || 404
+      halt(status.to_i)
     end
 
     get %r{/withdraw/([\w]+)} do |uuid|
@@ -151,15 +155,10 @@ module ExtremeStartup
     
   private
     
-    def local_ip
-      UDPSocket.open {|s| s.connect("64.233.187.99", 1); s.addr.last}
-    end
-    
     [:players, :players_threads, :scoreboard, :question_factory, :game_state].each do |setting|
       define_method(setting) do
         settings.send(setting)
       end
     end
-    
   end
 end
