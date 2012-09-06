@@ -10,6 +10,10 @@ module ExtremeStartup
       question.as_text.should =~ /what is the decimal value of 0x[\da-f]+ plus 0x[\da-f]+/i
     end
 
+    it "gives correct number of points" do
+      question.points.should == 25
+    end
+
     context "when the numbers are known" do
       let(:question) { HexadecimalQuestion.new(Player.new, 0xa1,0x1) }
 

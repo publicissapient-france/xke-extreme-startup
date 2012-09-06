@@ -4,7 +4,7 @@ xke-extreme-startup
 Xebia Questions
 ---------------
 
-We can run 6 rounds ! Order and points are **random**. Need to set it up before Sept 13, 2012.
+We can run 6 rounds !
 
 <table>
 	<thead>
@@ -24,28 +24,28 @@ We can run 6 rounds ! Order and points are **random**. Need to set it up before 
 	</thead>
 	<tbody>
 		<tr>
-			<td>RandomWordSHA1Question</td>
+			<td>AdditionQuestion</td>
 			<td>10</td>
 			<td>x</td>
 			<td>x</td>
 		</tr>
 		<tr>
-			<td>IntegerListQuestion</td>
-			<td>30</td>
+			<td>MaximumQuestion</td>
+			<td>40</td>
 			<td>x</td>
 			<td>x</td>
 			<td>x</td>
 		</tr>
 		<tr>
 			<td>FeetToMetersQuestion</td>
-			<td>10</td>
+			<td>20</td>
 			<td/>
 			<td>x</td>
 			<td>x</td>
 		</tr>
 		<tr>
-			<td>HttpResponseQuestion</td>
-			<td>10</td>
+			<td>PiQuestion</td>
+			<td>30</td>
 			<td/>
 			<td>x</td>
 			<td>x</td>
@@ -61,29 +61,49 @@ We can run 6 rounds ! Order and points are **random**. Need to set it up before 
 		</tr>
 		<tr>
 			<td>HexadecimalQuestion</td>
-			<td>10</td>
+			<td>25</td>
 			<td/>
 			<td/>
 			<td>x</td>
-			<td>x</td>
-			<td>x</td>
-		</tr>
-		<tr>
-			<td>PiQuestion</td>
-			<td>10</td>
-			<td/>
-			<td/>
-			<td/>
 			<td>x</td>
 			<td>x</td>
 		</tr>
 		<tr>
 			<td>WeekdayQuestion</td>
-			<td>10</td>
+			<td>50</td>
 			<td/>
 			<td/>
 			<td/>
 			<td>x</td>
+			<td>x</td>
+		</tr>
+		<tr>
+			<td>IntegerListQuestion</td>
+			<td>40</td>
+			<td/>
+			<td/>
+			<td/>
+			<td>x</td>
+			<td>x</td>
+			<td>x</td>
+		</tr>
+		<tr>
+			<td>RandomWordSHA1Question</td>
+			<td>30</td>
+			<td/>
+			<td/>
+			<td/>
+			<td></td>
+			<td>x</td>
+			<td>x</td>
+		</tr>
+		<tr>
+			<td>HttpResponseQuestion</td>
+			<td>60</td>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
 			<td>x</td>
 			<td>x</td>
 		</tr>

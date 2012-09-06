@@ -178,6 +178,9 @@ module ExtremeStartup
     def as_text
       "what is the decimal value of 0x#{@n1.to_s(16)} plus 0x#{@n2.to_s(16)} ?"
     end
+    def points
+      25
+    end
   private
     def correct_answer
       @n1 + @n2
@@ -303,7 +306,7 @@ module ExtremeStartup
       "what is the product of [#{@array.join(', ')}]"
     end
     def points
-      30
+      40
     end
     private
       def correct_answer
@@ -355,6 +358,9 @@ module ExtremeStartup
       n = @n1 + 1
       "what is the #{n}" + th(n) + " decimal of Pi"
     end
+    def points
+      30
+    end
   private
     def correct_answer
       "1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"[@n1]
@@ -381,6 +387,9 @@ module ExtremeStartup
     end
     def answered_correctly?(answer)
        (answer.to_f - correct_answer.to_f).abs < 0.01 
+    end
+    def points
+      20
     end
   private
    def correct_answer
@@ -484,6 +493,9 @@ module ExtremeStartup
     def as_text
       "what is the sha1 for \"#{@word}\""
     end
+    def points
+      30
+    end
     private
     def correct_answer
       Digest::SHA1.hexdigest @word
@@ -506,6 +518,10 @@ module ExtremeStartup
     def correct_answer
       @date.strftime('%A')
     end
+
+    def points
+      50
+    end
   end
 
   class HttpResponseQuestion < Question
@@ -526,6 +542,9 @@ module ExtremeStartup
       REGISTERED_RESPONSES[self.id]=@code
       "what is the http response code of #{@url+id.to_s}"
     end
+    def points
+      60
+    end
     private
     def correct_answer
       REGISTERED_RESPONSES.delete(self.id)
@@ -541,18 +560,14 @@ module ExtremeStartup
       @question_types = [
         AdditionQuestion,
         MaximumQuestion,
-        MultiplicationQuestion,
-        SquareCubeQuestion,
+        FeetToMetersQuestion,
+        PiQuestion,
         GeneralKnowledgeQuestion,
-        PrimesQuestion,
-        SubtractionQuestion,
-        FibonacciQuestion,
-        PowerQuestion,
-        AdditionAdditionQuestion,
-        AdditionMultiplicationQuestion,
-        MultiplicationAdditionQuestion,
-        AnagramQuestion,
-        ScrabbleQuestion
+        HexadecimalQuestion,
+        WeekdayQuestion,
+        IntegerListQuestion,
+        RandomWordSHA1Question,
+        HttpResponseQuestion,
       ]
     end
 

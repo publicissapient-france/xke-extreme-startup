@@ -10,6 +10,10 @@ module ExtremeStartup
       question.as_text.should =~ /what is the http response code of http:\/\/\w+(:\d+)?\/http_code\/\?uid=\w+/i
     end
 
+    it "gives correct number of points" do
+      question.points.should == 60
+    end
+
     context "when the word is known" do
       let(:question) { HttpResponseQuestion.new(Player.new,"http://localhost:3000/", "startup", 500) }
 

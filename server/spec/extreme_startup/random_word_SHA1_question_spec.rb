@@ -10,6 +10,10 @@ module ExtremeStartup
       question.as_text.should =~ /what is the sha1 for "(\w)+"/i
     end
 
+    it "gives correct number of points" do
+      question.points.should == 30
+    end
+
     context "when the word is known" do
       let(:question) { RandomWordSHA1Question.new(Player.new, "startup") }
 

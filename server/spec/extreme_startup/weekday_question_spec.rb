@@ -10,6 +10,10 @@ module ExtremeStartup
       question.as_text.should =~ /which day of the week is [\s123]\d \w{3} \d{4}/i
     end
 
+    it "gives correct number of points" do
+      question.points.should == 50
+    end
+
     context "when the date is known" do
       let(:question) { WeekdayQuestion.new(Player.new, Date.new(2013, 12, 7)) }
 

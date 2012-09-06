@@ -10,6 +10,10 @@ module ExtremeStartup
       question.as_text.should =~ /how much is \d+ feet in meters/
     end
 
+    it "gives correct number of points" do
+      question.points.should == 20
+    end
+
     context "when the number is 1" do
       let(:question) { FeetToMetersQuestion.new(Player.new, 0) }
     

@@ -10,6 +10,10 @@ module ExtremeStartup
       question.as_text.should =~ /what is the \d*(1st|2nd|3rd|[04-9]th) decimal of Pi/
     end
 
+    it "gives correct number of points" do
+      question.points.should == 30
+    end
+
     context "when the numbers are known" do
       let(:question) { PiQuestion.new(Player.new, 11) }
 

@@ -25,9 +25,9 @@ module ExtremeStartup
           questions = 20.times.map { factory.next_question(player) }
           questions.any? { |q| q.is_a?(AdditionQuestion) }.should be_true
           questions.any? { |q| q.is_a?(MaximumQuestion) }.should be_true
-          questions.any? { |q| q.is_a?(MultiplicationQuestion) }.should be_true
-          questions.any? { |q| q.is_a?(SquareCubeQuestion) }.should be_true
-          questions.all? { |q| [AdditionQuestion, MaximumQuestion, MultiplicationQuestion, SquareCubeQuestion, ].include? q.class }
+          questions.any? { |q| q.is_a?(FeetToMetersQuestion) }.should be_true
+          questions.any? { |q| q.is_a?(PiQuestion) }.should be_true
+          questions.all? { |q| [AdditionQuestion, MaximumQuestion, FeetToMetersQuestion, PiQuestion, ].include? q.class }
         end
      
     end
@@ -42,11 +42,11 @@ module ExtremeStartup
           questions = 30.times.map { factory.next_question(player) }
           questions.any? { |q| q.is_a?(AdditionQuestion) }.should be_false
           questions.any? { |q| q.is_a?(MaximumQuestion) }.should be_true
-          questions.any? { |q| q.is_a?(MultiplicationQuestion) }.should be_true
-          questions.any? { |q| q.is_a?(SquareCubeQuestion) }.should be_true
-          questions.any? { |q| q.is_a?(MultiplicationQuestion) }.should be_true
-          questions.any? { |q| q.is_a?(SquareCubeQuestion) }.should be_true
-          questions.all? { |q| [MaximumQuestion, MultiplicationQuestion, SquareCubeQuestion, GeneralKnowledgeQuestion, PrimesQuestion].include? q.class }
+          questions.any? { |q| q.is_a?(FeetToMetersQuestion) }.should be_true
+          questions.any? { |q| q.is_a?(PiQuestion) }.should be_true
+          questions.any? { |q| q.is_a?(GeneralKnowledgeQuestion) }.should be_true
+          questions.any? { |q| q.is_a?(HexadecimalQuestion) }.should be_true
+          questions.all? { |q| [MaximumQuestion, FeetToMetersQuestion, PiQuestion, GeneralKnowledgeQuestion, HexadecimalQuestion].include? q.class }
         end
      
     end
