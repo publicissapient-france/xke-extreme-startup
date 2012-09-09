@@ -176,7 +176,7 @@ module ExtremeStartup
       end
     end
     def as_text
-      "what is the decimal value of 0x#{@n1.to_s(16)} plus 0x#{@n2.to_s(16)} ?"
+      "what is the decimal value of 0x#{@n1.to_s(16)} plus 0x#{@n2.to_s(16)}"
     end
     def points
       25
