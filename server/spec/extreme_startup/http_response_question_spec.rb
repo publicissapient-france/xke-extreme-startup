@@ -10,7 +10,7 @@ module ExtremeStartup
     }
 
     it "converts to a string" do
-      question.as_text.should == "what HTTP response code do you get when you send a GET request to http://foobar.com"
+      question.as_text.should == "what HTTP response status do you get when you send a GET request to http://foobar.com"
     end
 
     it "identifies a correct answer" do
