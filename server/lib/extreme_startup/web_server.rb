@@ -26,8 +26,9 @@ module ExtremeStartup
     set :players,    Hash.new
     set :players_threads, Hash.new
     set :scoreboard, Scoreboard.new
-    set :mock_urls, MockUrls.new("http://#{local_ip}:#{settings.port}/http_code")
-    set :question_factory, ENV['WARMUP'] ? WarmupQuestionFactory.new : QuestionFactory.new
+    mock_urls = MockUrls.new("http://#{local_ip}:#{settings.port}/http_code")
+    set :mock_urls, mock_urls
+    set :question_factory, ENV['WARMUP'] ? WarmupQuestionFactory.new : QuestionFactory.new(mock_urls)
     set :game_state, GameState.new
 
     get '/' do 

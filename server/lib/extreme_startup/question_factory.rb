@@ -525,7 +525,12 @@ module ExtremeStartup
 
   class HttpResponseQuestion < Question
     def initialize(player, mock_urls)
-      @status, @url = mock_urls.sample_status_and_url
+      if mock_urls
+        @status, @url = mock_urls.sample_status_and_url
+      else
+        @status = -1
+        @url = 'http://127.0.0.1'
+      end
     end
 
     def as_text
@@ -544,7 +549,7 @@ module ExtremeStartup
   class QuestionFactory
     attr_reader :round
 
-    def initialize
+    def initialize(mock_urls = nil)
       @round = 1
       @question_types = [
         AdditionQuestion,
@@ -558,6 +563,7 @@ module ExtremeStartup
         RandomWordSHA1Question,
         HttpResponseQuestion,
       ]
+      @mock_urls = mock_urls
     end
 
     def next_question(player)
@@ -566,7 +572,7 @@ module ExtremeStartup
       available_question_types = @question_types[window_start..window_end]
       next_question_type = available_question_types.sample
       if next_question_type == HttpResponseQuestion
-        next_question_type.new(player, mock_urls)
+        next_question_type.new(player, @mock_urls)
       else
         next_question_type.new(player)
       end
