@@ -30,6 +30,7 @@ module ExtremeStartup
     set :mock_urls, mock_urls
     set :question_factory, ENV['WARMUP'] ? WarmupQuestionFactory.new : QuestionFactory.new(mock_urls)
     set :game_state, GameState.new
+    set :views, File.dirname(__FILE__) + "/../../views"
 
     get '/' do 
       haml :leaderboard, :locals => { 
