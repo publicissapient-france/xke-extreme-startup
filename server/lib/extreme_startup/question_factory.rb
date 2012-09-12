@@ -353,6 +353,35 @@ module ExtremeStartup
     end
   end
 
+  class LucasQuestion < UnaryMathsQuestion
+    @@lucasNumbers = [ "2", "3", "7", "11", "29", "47", "199", "521", "2207", "3571", "9349", "3010349", 
+      "54018521", "370248451", "6643838879", "119218851371", "5600748293801", "688846502588399", 
+      "32361122672259149", "412670427844921037470771", "258899611203303418721656157249445530046830073044201152332257717521" ]
+    def as_text
+      n = @n1 + 1
+      "what is the #{n}" + th(n) + " Prime Lucas number"
+    end
+    def points
+      50
+    end
+  private
+    def correct_answer
+      @@lucasNumbers[@n1]
+    end
+    def th(n)
+      if n != 11 && n % 10 == 1
+        return "st"
+      end
+      if n != 12 && n % 10 == 2
+        return "nd"
+      end
+      if n != 13 && n % 10 == 3
+        return "rd"
+      end
+      "th"
+    end
+  end
+
   class PiQuestion < UnaryMathsQuestion
     def as_text
       n = @n1 + 1
@@ -444,6 +473,24 @@ module ExtremeStartup
 
     def correct_answer
       @anagram["correct"]
+    end
+  end
+
+  class AlphagramQuestion < Question
+    def as_text
+      "what is the Alphagram of \"#{@word}\""
+    end
+
+    def initialize(player, word=nil)
+      if(word)
+        @word=word
+      else
+        @word=RandomWord.adjs.next
+      end
+    end
+
+    def correct_answer
+      @word.unpack("c*").sort.pack("c*")
     end
   end
 
