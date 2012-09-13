@@ -609,6 +609,8 @@ module ExtremeStartup
         IntegerListQuestion,
         RandomWordSHA1Question,
         HttpResponseQuestion,
+        AlphagramQuestion,
+        LucasQuestion,
       ]
       @mock_urls = mock_urls
     end

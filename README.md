@@ -20,6 +20,7 @@ We can run 6 rounds !
 			<th>4</th>
 			<th>5</th>
 			<th>6</th>
+			<th>7</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -28,6 +29,11 @@ We can run 6 rounds !
 			<td>10</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>MaximumQuestion</td>
@@ -35,6 +41,10 @@ We can run 6 rounds !
 			<td>x</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>FeetToMetersQuestion</td>
@@ -42,6 +52,9 @@ We can run 6 rounds !
 			<td/>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>PiQuestion</td>
@@ -50,6 +63,9 @@ We can run 6 rounds !
 			<td>x</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>GeneralKnowledgeQuestion</td>
@@ -58,6 +74,8 @@ We can run 6 rounds !
 			<td/>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>HexadecimalQuestion</td>
@@ -67,6 +85,8 @@ We can run 6 rounds !
 			<td>x</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>WeekdayQuestion</td>
@@ -76,6 +96,8 @@ We can run 6 rounds !
 			<td/>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>IntegerListQuestion</td>
@@ -86,6 +108,7 @@ We can run 6 rounds !
 			<td>x</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
 		</tr>
 		<tr>
 			<td>RandomWordSHA1Question</td>
@@ -93,13 +116,37 @@ We can run 6 rounds !
 			<td/>
 			<td/>
 			<td/>
-			<td></td>
+			<td/>
 			<td>x</td>
 			<td>x</td>
+			<td/>
 		</tr>
 		<tr>
 			<td>HttpResponseQuestion</td>
 			<td>60</td>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
+			<td>x</td>
+			<td>x</td>
+			<td>x</td>
+		</tr>
+		<tr>
+			<td>AlphagramQuestion</td>
+			<td>10</td>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
+			<td>x</td>
+			<td>x</td>
+		</tr>
+		<tr>
+			<td>LucasQuestion</td>
+			<td>50</td>
+			<td/>
 			<td/>
 			<td/>
 			<td/>
