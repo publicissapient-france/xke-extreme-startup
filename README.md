@@ -11,7 +11,7 @@ We can run 7 rounds !
 		<tr>
 			<th rowspan="2">Question</th>
 			<th rowspan="2">Point</th>
-			<th colspan="6">Rounds</th>
+			<th colspan="7">Rounds</th>
 		</tr>
 		<tr>
 			<th>1</th>
