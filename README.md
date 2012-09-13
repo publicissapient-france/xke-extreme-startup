@@ -4,7 +4,7 @@ xke-extreme-startup
 Xebia Questions
 ---------------
 
-We can run 6 rounds !
+We can run 7 rounds !
 
 <table>
 	<thead>
@@ -55,6 +55,7 @@ We can run 6 rounds !
 			<td/>
 			<td/>
 			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>PiQuestion</td>
@@ -74,6 +75,7 @@ We can run 6 rounds !
 			<td/>
 			<td>x</td>
 			<td>x</td>
+			<td/>
 			<td/>
 			<td/>
 		</tr>
@@ -165,6 +167,7 @@ We can run 6 rounds !
 			<td>4</td>
 			<td>5</td>
 			<td>6</td>
+			<td>7</td>
 		</tr>
 	</tfooter>
 </table>
@@ -196,6 +199,12 @@ Original Questions
 			<td>10</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>MaximumQuestion</td>
@@ -203,6 +212,11 @@ Original Questions
 			<td>x</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>MultiplicationQuestion</td>
@@ -210,6 +224,11 @@ Original Questions
 			<td/>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>SquareCubeQuestion</td>
@@ -218,6 +237,10 @@ Original Questions
 			<td>x</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>GeneralKnowledgeQuestion</td>
@@ -226,6 +249,10 @@ Original Questions
 			<td/>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>PrimesQuestion</td>
@@ -235,6 +262,9 @@ Original Questions
 			<td>x</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>SubtractionQuestion</td>
@@ -244,6 +274,9 @@ Original Questions
 			<td/>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>FibonacciQuestion</td>
@@ -254,6 +287,8 @@ Original Questions
 			<td>x</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>PowerQuestion</td>
@@ -264,6 +299,8 @@ Original Questions
 			<td/>
 			<td>x</td>
 			<td>x</td>
+			<td/>
+			<td/>
 		</tr>
 		<tr>
 			<td>AdditionAdditionQuestion</td>
@@ -275,6 +312,7 @@ Original Questions
 			<td>x</td>
 			<td>x</td>
 			<td>x</td>
+			<td/>
 		</tr>
 		<tr>
 			<td>AdditionMultiplicationQuestion</td>
@@ -286,6 +324,7 @@ Original Questions
 			<td/>
 			<td>x</td>
 			<td>x</td>
+			<td/>
 		</tr>
 		<tr>
 			<td>MultiplicationAdditionQuestion</td>
